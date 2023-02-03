@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">memo</string>
+    <string name="play_2players">zagraj w dwie osoby</string>
+    <string name="play">graj</string>
+    <string name="mute">wycisz</string>
+    <string name="electricity">elektryczność</string>
+    <string name="mechanics">mechanika</string>
+    <string name="it">informatyka</string>
+    <string name="mechatronics">mechatronika</string>
+    <string name="one">jedna</string>
+    <string name="many">Wiele</string>
+    <string name="manycat">Czy chcesz wiele kategori naraz</string>
+
 </resources>
