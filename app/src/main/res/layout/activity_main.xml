@@ -42,13 +42,14 @@
             android:id="@+id/buttonPlay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:onClick="playSinglePlayer"
+            android:text="@string/play" />
 
         <Button
             android:id="@+id/buttonPlayTwoPlayers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/play_2players" />
     </LinearLayout>
 
 </LinearLayout>

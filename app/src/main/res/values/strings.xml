@@ -10,5 +10,6 @@
     <string name="one">jedna</string>
     <string name="many">Wiele</string>
     <string name="manycat">Czy chcesz wiele kategori naraz</string>
+    <string name="points">Punkty:</string>
 
 </resources>

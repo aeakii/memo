@@ -22,7 +22,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/logo" />
+                app:srcCompat="@drawable/ic_launcher_foreground" />
 
             <ImageButton
                 android:id="@+id/imageButton"
@@ -77,22 +77,28 @@
                 android:id="@+id/buttonCategoryIt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="startGame"
                 android:text="@string/it" />
 
             <Button
                 android:id="@+id/buttonCategoryMechatronics"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="startGame"
                 android:text="@string/mechatronics" />
+
             <Button
                 android:id="@+id/buttonCategoryElectricity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="startGame"
                 android:text="@string/electricity" />
+
             <Button
                 android:id="@+id/buttonCategoryMechanics"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="startGame"
                 android:text="@string/mechanics" />
         </LinearLayout>
 
