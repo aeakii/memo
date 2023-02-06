@@ -10,6 +10,7 @@ class GameActivity : AppCompatActivity() {
     private var cards = arrayOf(0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
     private var selectedcard: Int = -1
     private var points: Int = 0
+    private  var usedCards : MutableList<Int> =mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         for(i in 0 .. cards.size-1)cards[i]=-2
@@ -57,10 +58,12 @@ class GameActivity : AppCompatActivity() {
         var cardstoseeindebugger = cards
         if (selectedcard == -1) selectedcard = currentCard
         else {
-            if (cards[selectedcard]==currentCard) {
+            if ((cards[selectedcard]==currentCard) and !usedCards.contains(currentCard)) {
                 points++
                 var pointsTxt: TextView = findViewById(R.id.textViewPoints)
                 pointsTxt.text = points.toString()
+                usedCards.add(selectedcard)
+                usedCards.add(currentCard)
             }
             selectedcard = -1
         }
