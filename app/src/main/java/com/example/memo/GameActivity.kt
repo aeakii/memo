@@ -34,23 +34,24 @@ class GameActivity : AppCompatActivity() {
             }
         }
 
+
     }
 
     fun selectCard(view: View) {
 
         val currentCard = when (view.id) {
             R.id.imageButton1 -> 0
-            R.id.imageButton1 -> 1
-            R.id.imageButton1 -> 2
-            R.id.imageButton1 -> 3
-            R.id.imageButton1 -> 4
-            R.id.imageButton1 -> 5
-            R.id.imageButton1 -> 6
-            R.id.imageButton1 -> 7
-            R.id.imageButton1 -> 8
-            R.id.imageButton1 -> 9
-            R.id.imageButton1 -> 10
-            R.id.imageButton1 -> 11
+            R.id.imageButton2 -> 1
+            R.id.imageButton3 -> 2
+            R.id.imageButton4 -> 3
+            R.id.imageButton5 -> 4
+            R.id.imageButton6 -> 5
+            R.id.imageButton7 -> 6
+            R.id.imageButton8 -> 7
+            R.id.imageButton9 -> 8
+            R.id.imageButton10 -> 9
+            R.id.imageButton11-> 10
+            R.id.imageButton12 -> 11
             else -> -1
         }
         var cardstoseeindebugger = cards
