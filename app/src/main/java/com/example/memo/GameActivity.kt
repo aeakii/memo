@@ -12,11 +12,17 @@ class GameActivity : AppCompatActivity() {
     private var points: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        for(i in 0 .. cards.size-1)cards[i]=-2
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
         var notSetCards=mutableListOf(0,1,2,3,4,5,6,7,8,9,10,11)
         for(i in 0 .. notSetCards.size-1) {
-            notSetCards.remove(i)
+
+            if(!notSetCards.contains(i)) {
+                break
+            }
+
+                notSetCards.remove(i)
             if (!notSetCards.isEmpty()) {
                 var randomElementFromNotSetCards = notSetCards[
                     if(notSetCards.size==1) 0
