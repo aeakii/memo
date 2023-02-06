@@ -19,7 +19,7 @@ class GameActivity : AppCompatActivity() {
         for(i in 0 .. notSetCards.size-1) {
 
             if(!notSetCards.contains(i)) {
-                break
+                continue
             }
 
                 notSetCards.remove(i)
