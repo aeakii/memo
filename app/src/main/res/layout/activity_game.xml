@@ -20,25 +20,31 @@
 
         <ImageButton
             android:id="@+id/imageButton1"
-            android:layout_width="wrap_content"
+            android:layout_width="0.5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:maxWidth="1dp"
+            android:minWidth="1dp"
             android:onClick="selectCard"
             android:src="@drawable/ic_launcher_foreground" />
 
         <ImageButton
             android:id="@+id/imageButton2"
-            android:layout_width="wrap_content"
+            android:layout_width="0.5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:maxWidth="1dp"
+            android:minWidth="1dp"
             android:onClick="selectCard"
             android:src="@drawable/ic_launcher_foreground" />
 
         <ImageButton
             android:id="@+id/imageButton3"
-            android:layout_width="wrap_content"
+            android:layout_width="0.5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:maxWidth="1dp"
+            android:minWidth="1dp"
             android:onClick="selectCard"
             android:src="@drawable/ic_launcher_foreground" />
     </LinearLayout>
@@ -50,25 +56,31 @@
 
         <ImageButton
             android:id="@+id/imageButton4"
-            android:layout_width="wrap_content"
+            android:layout_width="0.5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:maxWidth="1dp"
+            android:minWidth="1dp"
             android:onClick="selectCard"
             android:src="@drawable/ic_launcher_foreground" />
 
         <ImageButton
             android:id="@+id/imageButton5"
-            android:layout_width="wrap_content"
+            android:layout_width="0.5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:maxWidth="1dp"
+            android:minWidth="1dp"
             android:onClick="selectCard"
             android:src="@drawable/ic_launcher_foreground" />
 
         <ImageButton
             android:id="@+id/imageButton6"
-            android:layout_width="wrap_content"
+            android:layout_width="0.5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:maxWidth="1dp"
+            android:minWidth="1dp"
             android:onClick="selectCard"
             android:src="@drawable/ic_launcher_foreground" />
     </LinearLayout>
@@ -80,7 +92,7 @@
 
         <ImageButton
             android:id="@+id/imageButton7"
-            android:layout_width="wrap_content"
+            android:layout_width="0.5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="selectCard"
@@ -88,7 +100,7 @@
 
         <ImageButton
             android:id="@+id/imageButton8"
-            android:layout_width="wrap_content"
+            android:layout_width="0.5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="selectCard"
@@ -96,7 +108,7 @@
 
         <ImageButton
             android:id="@+id/imageButton9"
-            android:layout_width="wrap_content"
+            android:layout_width="0.5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="selectCard"
@@ -110,7 +122,7 @@
 
         <ImageButton
             android:id="@+id/imageButton10"
-            android:layout_width="wrap_content"
+            android:layout_width="0.5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="selectCard"
@@ -118,7 +130,7 @@
 
         <ImageButton
             android:id="@+id/imageButton11"
-            android:layout_width="wrap_content"
+            android:layout_width="0.5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="selectCard"
@@ -126,7 +138,7 @@
 
         <ImageButton
             android:id="@+id/imageButton12"
-            android:layout_width="wrap_content"
+            android:layout_width="0.5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="selectCard"
