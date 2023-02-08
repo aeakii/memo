@@ -9,6 +9,7 @@ import kotlin.random.Random
 
 class GameActivity : AppCompatActivity() {
     private val quantityOfCards = 12
+    private val imagesOfCards = arrayOfNulls<Int>(quantityOfCards)
     private var cards = arrayOfNulls<Int>(12)
     private var previouslySelectedCardIndex: Int = -1
     private var points: Int = 0
@@ -26,7 +27,6 @@ class GameActivity : AppCompatActivity() {
         R.drawable.a7,
         R.drawable.a8,
         R.drawable.a9,
-        R.drawable.a10,
         R.drawable.a11,
         R.drawable.a12
     )
@@ -36,6 +36,7 @@ class GameActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
         var notSetCards = mutableListOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
+        val notSetImages = cat1.toMutableList()
         for (i in 0..notSetCards.size - 1) {
 
             if (!notSetCards.contains(i)) {
@@ -51,6 +52,15 @@ class GameActivity : AppCompatActivity() {
 
                 cards[i] = randomElementFromNotSetCards
                 cards[randomElementFromNotSetCards] = i
+
+                val randomElementFromNotSetImages = notSetImages[
+                        if(notSetImages.size==1)0
+                        else Random.nextInt(notSetImages.size -1)
+                ]
+                notSetImages.remove(randomElementFromNotSetImages)
+                imagesOfCards[i]=randomElementFromNotSetImages
+                imagesOfCards[randomElementFromNotSetCards]=randomElementFromNotSetImages
+
             }
         }
 
@@ -76,7 +86,7 @@ class GameActivity : AppCompatActivity() {
             }
             var cardstoseeindebugger = cards
 
-            view.setImageDrawable(resources.getDrawable(cat1[currentCardIndex]))
+            view.setImageDrawable(resources.getDrawable(imagesOfCards[currentCardIndex]!!))
             view.isClickable=false
             if (previouslySelectedCardIndex == -1) {
                 previouslySelectedCardIndex = currentCardIndex
