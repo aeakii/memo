@@ -26,7 +26,7 @@
             android:maxWidth="1dp"
             android:minWidth="1dp"
             android:onClick="selectCard"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:src="@android:drawable/btn_radio" />
 
         <ImageButton
             android:id="@+id/imageButton2"
@@ -36,7 +36,7 @@
             android:maxWidth="1dp"
             android:minWidth="1dp"
             android:onClick="selectCard"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:src="@android:drawable/btn_radio" />
 
         <ImageButton
             android:id="@+id/imageButton3"
@@ -46,7 +46,7 @@
             android:maxWidth="1dp"
             android:minWidth="1dp"
             android:onClick="selectCard"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:src="@android:drawable/btn_radio" />
     </LinearLayout>
 
     <LinearLayout
@@ -62,7 +62,7 @@
             android:maxWidth="1dp"
             android:minWidth="1dp"
             android:onClick="selectCard"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:src="@android:drawable/btn_radio" />
 
         <ImageButton
             android:id="@+id/imageButton5"
@@ -72,7 +72,7 @@
             android:maxWidth="1dp"
             android:minWidth="1dp"
             android:onClick="selectCard"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:src="@android:drawable/btn_radio" />
 
         <ImageButton
             android:id="@+id/imageButton6"
@@ -82,7 +82,7 @@
             android:maxWidth="1dp"
             android:minWidth="1dp"
             android:onClick="selectCard"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:src="@android:drawable/btn_radio" />
     </LinearLayout>
 
     <LinearLayout
@@ -96,7 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="selectCard"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:src="@android:drawable/btn_radio" />
 
         <ImageButton
             android:id="@+id/imageButton8"
@@ -104,7 +104,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="selectCard"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:src="@android:drawable/btn_radio" />
 
         <ImageButton
             android:id="@+id/imageButton9"
@@ -112,7 +112,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="selectCard"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:src="@android:drawable/btn_radio" />
     </LinearLayout>
 
     <LinearLayout
@@ -126,7 +126,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="selectCard"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:src="@android:drawable/btn_radio" />
 
         <ImageButton
             android:id="@+id/imageButton11"
@@ -134,7 +134,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="selectCard"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:src="@android:drawable/btn_radio" />
 
         <ImageButton
             android:id="@+id/imageButton12"
@@ -142,7 +142,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="selectCard"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:src="@android:drawable/btn_radio" />
     </LinearLayout>
 
 </LinearLayout>

@@ -1,55 +1,56 @@
 package com.example.memo
 
-import android.graphics.drawable.Drawable
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.TextView
 import kotlin.random.Random
 
 class GameActivity : AppCompatActivity() {
-    private var cards = arrayOf(0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
-    private var selectedcard: Int = -1
+    private val quantityOfCards = 12
+    private var cards = arrayOfNulls<Int>(12)
+    private var previouslySelectedCardIndex: Int = -1
     private var points: Int = 0
-    private  var usedCards : MutableList<Int> =mutableListOf()
-    private lateinit var selectedCardImgView : ImageButton
-    private val coveredCardImage = com.google.android.material.R.drawable.abc_btn_radio_to_on_mtrl_000
-    private val cat1 = arrayOf(R.drawable.a1,
+    private var usedCards: MutableList<Int> = mutableListOf()
+    private lateinit var previouslySelectedCardComponent: ImageButton
+    private val coveredCardImage =
+        com.google.android.material.R.drawable.abc_btn_radio_to_on_mtrl_000
+    private val cat1 = arrayOf(
+        R.drawable.a1,
         R.drawable.a2,
-                R.drawable.a3,
-                R.drawable.a4,
-                R.drawable.a5,
-                R.drawable.a6,
-                R.drawable.a7,
-                R.drawable.a8,
-                R.drawable.a9,
-                R.drawable.a10,
-                R.drawable.a11,
-                R.drawable.a12
+        R.drawable.a3,
+        R.drawable.a4,
+        R.drawable.a5,
+        R.drawable.a6,
+        R.drawable.a7,
+        R.drawable.a8,
+        R.drawable.a9,
+        R.drawable.a10,
+        R.drawable.a11,
+        R.drawable.a12
     )
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        for(i in 0 .. cards.size-1)cards[i]=-2
+        for (i in 0..cards.size - 1) cards[i] = -2
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
-        var notSetCards=mutableListOf(0,1,2,3,4,5,6,7,8,9,10,11)
-        for(i in 0 .. notSetCards.size-1) {
+        var notSetCards = mutableListOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
+        for (i in 0..notSetCards.size - 1) {
 
-            if(!notSetCards.contains(i)) {
+            if (!notSetCards.contains(i)) {
                 continue
             }
 
-                notSetCards.remove(i)
+            notSetCards.remove(i)
             if (!notSetCards.isEmpty()) {
                 var randomElementFromNotSetCards = notSetCards[
-                    if(notSetCards.size==1) 0
-                    else Random.nextInt(notSetCards.size - 1)]
+                        if (notSetCards.size == 1) 0
+                        else Random.nextInt(notSetCards.size - 1)]
                 notSetCards.remove(randomElementFromNotSetCards)
 
                 cards[i] = randomElementFromNotSetCards
-                cards[randomElementFromNotSetCards]=i
+                cards[randomElementFromNotSetCards] = i
             }
         }
 
@@ -58,7 +59,7 @@ class GameActivity : AppCompatActivity() {
 
     fun selectCard(view: View) {
         if (view is ImageButton) {
-            val currentCard = when (view.id) {
+            val currentCardIndex = when (view.id) {
                 R.id.imageButton1 -> 0
                 R.id.imageButton2 -> 1
                 R.id.imageButton3 -> 2
@@ -75,30 +76,35 @@ class GameActivity : AppCompatActivity() {
             }
             var cardstoseeindebugger = cards
 
-            view.setImageDrawable(resources.getDrawable(cat1[currentCard]))
-            if (selectedcard == -1) {
-                selectedcard = currentCard
-                selectedCardImgView = view
+            view.setImageDrawable(resources.getDrawable(cat1[currentCardIndex]))
+            view.isClickable=false
+            if (previouslySelectedCardIndex == -1) {
+                previouslySelectedCardIndex = currentCardIndex
+                previouslySelectedCardComponent = view
             } else {
-                if ( !usedCards.contains(currentCard)) {
-                    if((cards[selectedcard] == currentCard)) {
+                if (!usedCards.contains(currentCardIndex)) {
+                    if ((cards[previouslySelectedCardIndex] == currentCardIndex)) {
                         points++
 
                         var pointsTxt: TextView = findViewById(R.id.textViewPoints)
                         pointsTxt.text = points.toString()
-                        usedCards.add(selectedcard)
-                        usedCards.add(currentCard)
+                        usedCards.add(previouslySelectedCardIndex)
+                        usedCards.add(currentCardIndex)
+                    } else {
+                        view.setImageDrawable(resources.getDrawable(coveredCardImage))
+                        previouslySelectedCardComponent.setImageDrawable(
+                            resources.getDrawable(
+                                coveredCardImage
+                            )
+                        )
+                        view.isClickable = true
+                        previouslySelectedCardComponent.isClickable = true
                     }
-                } else {
-                    view.setImageDrawable(resources.getDrawable(coveredCardImage))
-                    selectedCardImgView.setImageDrawable(resources.getDrawable(coveredCardImage))
                 }
 
-                selectedcard = -1
+                previouslySelectedCardIndex = -1
             }
         }
     }
 
 }
-
-//https://game-icons.net/1x1/delapouite/drill.html
