@@ -3,6 +3,7 @@ package com.example.memo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import kotlin.random.Random
@@ -14,7 +15,7 @@ class GameActivity : AppCompatActivity() {
     private var previouslySelectedCardIndex: Int = -1
     private var points: Int = 0
     private var usedCards: MutableList<Int> = mutableListOf()
-    private lateinit var previouslySelectedCardComponent: ImageButton
+    private lateinit var previouslySelectedCardComponent: Button
     private val coveredCardImage =
         com.google.android.material.R.drawable.abc_btn_radio_to_on_mtrl_000
     private val cat1 = arrayOf(
@@ -68,7 +69,7 @@ class GameActivity : AppCompatActivity() {
     }
 
     fun selectCard(view: View) {
-        if (view is ImageButton) {
+        if (view is Button) {
             val currentCardIndex = when (view.id) {
                 R.id.imageButton1 -> 0
                 R.id.imageButton2 -> 1
@@ -84,9 +85,7 @@ class GameActivity : AppCompatActivity() {
                 R.id.imageButton12 -> 11
                 else -> -1
             }
-            var cardstoseeindebugger = cards
-
-            view.setImageDrawable(resources.getDrawable(imagesOfCards[currentCardIndex]!!))
+            view.setCompoundDrawablesWithIntrinsicBounds(null,resources.getDrawable(imagesOfCards[currentCardIndex]!!),null,null)
             view.isClickable=false
             if (previouslySelectedCardIndex == -1) {
                 previouslySelectedCardIndex = currentCardIndex
@@ -101,12 +100,8 @@ class GameActivity : AppCompatActivity() {
                         usedCards.add(previouslySelectedCardIndex)
                         usedCards.add(currentCardIndex)
                     } else {
-                        view.setImageDrawable(resources.getDrawable(coveredCardImage))
-                        previouslySelectedCardComponent.setImageDrawable(
-                            resources.getDrawable(
-                                coveredCardImage
-                            )
-                        )
+                        view.setCompoundDrawables(null,resources.getDrawable(imagesOfCards[currentCardIndex]!!),null,null)
+                        previouslySelectedCardComponent.setCompoundDrawablesWithIntrinsicBounds(null,resources.getDrawable(coveredCardImage),null,null)
                         view.isClickable = true
                         previouslySelectedCardComponent.isClickable = true
                     }
