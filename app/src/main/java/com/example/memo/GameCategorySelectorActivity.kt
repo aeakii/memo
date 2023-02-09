@@ -12,6 +12,7 @@ class GameCategorySelectorActivity : AppCompatActivity() {
     }
     fun startGame(view:View){
         val game = Intent(this, GameActivity::class.java)
+        game.putExtra("twoPlayers",intent.getBooleanExtra("twoPlayers",false))
         startActivity(game)
     }
 }

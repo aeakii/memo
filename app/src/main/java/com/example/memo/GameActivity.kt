@@ -20,6 +20,11 @@ class GameActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        if(intent.getBooleanExtra("twoPlayers",false)) {
+            val txtPlayer2 = findViewById<View>(R.id.textViewPointsPlayerBlue)
+            //txtPlayer2.visibility = View.GONE
+        }
+
         for (i in 0..indexOfTheSecondCard.size - 1) indexOfTheSecondCard[i] = -2
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
@@ -67,7 +72,7 @@ class GameActivity : AppCompatActivity() {
                     if ((indexOfTheSecondCard[previouslySelectedCardIndex] == getCardIndex(view))) {
                         points++
 
-                        var pointsTxt: TextView = findViewById(R.id.textViewPoints)
+                        var pointsTxt: TextView = findViewById(R.id.textViewPointsPlayerRed)
                         pointsTxt.text = points.toString()
                         selectedCards.add(previouslySelectedCardIndex)
                         selectedCards.add(getCardIndex(view))

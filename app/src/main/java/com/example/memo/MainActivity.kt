@@ -11,8 +11,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
-    fun playSinglePlayer(view: View){
-        val gameCatSelector = Intent(this, GameCategorySelectorActivity::class.java)
-        startActivity(gameCatSelector)
+    fun play(view: View){
+        var activityCategoriesIntent = Intent(this@MainActivity,GameCategorySelectorActivity::class.java)
+        activityCategoriesIntent.putExtra("twoPlayers",
+            if(view.id==R.id.buttonPlayTwoPlayers)true
+            else false
+            )
+        startActivity(activityCategoriesIntent)
     }
 }
