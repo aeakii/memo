@@ -1,9 +1,11 @@
 package com.example.memo
 
+import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import kotlin.random.Random
 
@@ -14,7 +16,7 @@ class GameActivity : AppCompatActivity() {
     private var previouslySelectedCardIndex: Int = -1
     private var points: Int = 0
     private var selectedCards: MutableList<Int> = mutableListOf()
-    private lateinit var previouslySelectedCardComponent: Button
+    private lateinit var previouslySelectedCardComponent: ImageView
     private val coveredCardImage =
         com.google.android.material.R.drawable.abc_btn_radio_to_on_mtrl_000
 
@@ -61,7 +63,7 @@ class GameActivity : AppCompatActivity() {
     }
 
     fun selectCard(view: View) {
-        if (view is Button) {
+        if (view is ImageView) {
 
             displayCard(view,false)
             if (previouslySelectedCardIndex == -1) {
@@ -87,17 +89,19 @@ class GameActivity : AppCompatActivity() {
         }
     }
 
-    fun displayCard(cardView : Button, cover : Boolean ){
+    fun displayCard(cardView : ImageView, cover : Boolean ){
         cardView.isClickable = cover
         if(cover){
-            cardView.setCompoundDrawablesWithIntrinsicBounds(null,resources.getDrawable(coveredCardImage),null,null)
-            cardView.text =""
+            cardView.setImageDrawable(resources.getDrawable(coveredCardImage))
+            //cardView.text =""
         }else{
             var indexOfTheCurrentCard = getCardIndex(cardView)
-            if(indexOfTheCurrentCard < indexOfTheSecondCard[indexOfTheCurrentCard]!!)
-                cardView.setCompoundDrawablesWithIntrinsicBounds(null,resources.getDrawable(dataOfCards[indexOfTheCurrentCard]!!.image),null,null)
+            if(indexOfTheCurrentCard < indexOfTheSecondCard[indexOfTheCurrentCard]!!){
+                //cardView.setCompoundDrawablesWithIntrinsicBounds(null,resources.getDrawable(dataOfCards[indexOfTheCurrentCard]!!.image),null,null)
+                cardView.setImageDrawable(resources.getDrawable(dataOfCards[indexOfTheCurrentCard]!!.image))
+            }
             else {
-                cardView.text = dataOfCards[indexOfTheCurrentCard]!!.pronoun + " "+ dataOfCards[indexOfTheCurrentCard]!!.name
+                //cardView.text = dataOfCards[indexOfTheCurrentCard]!!.pronoun + " "+ dataOfCards[indexOfTheCurrentCard]!!.name
 
             }
 
@@ -106,18 +110,18 @@ class GameActivity : AppCompatActivity() {
 
     fun getCardIndex(view: View) : Int {
         return when (view.id) {
-            R.id.imageButton1 -> 0
-            R.id.imageButton2 -> 1
-            R.id.imageButton3 -> 2
-            R.id.imageButton4 -> 3
-            R.id.imageButton5 -> 4
-            R.id.imageButton6 -> 5
-            R.id.imageButton7 -> 6
-            R.id.imageButton8 -> 7
-            R.id.imageButton9 -> 8
-            R.id.imageButton10 -> 9
-            R.id.imageButton11 -> 10
-            R.id.imageButton12 -> 11
+            R.id.imageView1 -> 0
+            R.id.imageView2 -> 1
+            R.id.imageView3 -> 2
+            R.id.imageView4 -> 3
+            R.id.imageView5 -> 4
+            R.id.imageView6 -> 5
+            R.id.imageView7 -> 6
+            R.id.imageView8 -> 7
+            R.id.imageView9 -> 8
+            R.id.imageView10 -> 9
+            R.id.imageView11 -> 10
+            R.id.imageView12 -> 11
             else -> -1
         }
     }
