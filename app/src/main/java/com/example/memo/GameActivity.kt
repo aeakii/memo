@@ -3,6 +3,7 @@ package com.example.memo
 import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
@@ -17,8 +18,10 @@ class GameActivity : AppCompatActivity() {
     private var points: Int = 0
     private var selectedCards: MutableList<Int> = mutableListOf()
     private lateinit var previouslySelectedCardComponent: TextView
+    private lateinit var secondSelectedCardComponent : TextView
     private val coveredCardImage =
         com.google.android.material.R.drawable.abc_btn_radio_to_on_mtrl_000
+    private var timerNotStarted : Boolean = true
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,7 +67,8 @@ class GameActivity : AppCompatActivity() {
 
     fun selectCard(view: View) {
         if (view is TextView) {
-
+            if(!timerNotStarted)coverCurrentCards()
+            secondSelectedCardComponent = view
             displayCard(view,false)
             if (previouslySelectedCardIndex == -1) {
                 previouslySelectedCardIndex = getCardIndex(view)
@@ -81,8 +85,8 @@ class GameActivity : AppCompatActivity() {
                         view.setShadowLayer(0F,0F,0F,0xFFFFFF)
                         previouslySelectedCardComponent.setShadowLayer(0F,0F,0F,0xFFFFFF)
                     } else {
-                        displayCard(view,true)
-                        displayCard(previouslySelectedCardComponent,true)
+                        timerNotStarted=false
+                        timer.start()
                     }
                 }
 
@@ -126,6 +130,21 @@ class GameActivity : AppCompatActivity() {
             R.id.textView12 -> 11
             else -> -1
         }
+    }
+    var timer = object : CountDownTimer(1000, 10) {
+        override fun onTick(millisUntilFinished: Long) {
+
+        }
+
+        override fun onFinish() {
+            coverCurrentCards()
+            timerNotStarted=true
+        }
+    }
+    private fun coverCurrentCards(){
+        displayCard(secondSelectedCardComponent,true)
+        displayCard(previouslySelectedCardComponent,true)
+
     }
 
 }
