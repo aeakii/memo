@@ -75,7 +75,7 @@ class GameActivity : AppCompatActivity() {
                         points++
 
                         var pointsTxt: TextView = findViewById(R.id.textViewPointsPlayerRed)
-                        pointsTxt.text = points.toString()
+                        pointsTxt.text = "points: " + points.toString()
                         selectedCards.add(previouslySelectedCardIndex)
                         selectedCards.add(getCardIndex(view))
                         view.setShadowLayer(0F,0F,0F,0xFFFFFF)
