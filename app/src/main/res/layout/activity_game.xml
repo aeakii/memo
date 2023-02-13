@@ -93,7 +93,7 @@
             android:shadowColor="#2196F3"
             android:shadowRadius="10"
             android:textAlignment="center"
-            app:drawableTopCompat="@drawable/border" />
+             />
 
 
         <TextView

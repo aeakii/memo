@@ -142,7 +142,9 @@ class GameActivity : AppCompatActivity() {
         }
     }
     private fun coverCurrentCards(){
+        if(!selectedCards.contains(getCardIndex(secondSelectedCardComponent)))
         displayCard(secondSelectedCardComponent,true)
+        if(!selectedCards.contains(getCardIndex(previouslySelectedCardComponent)))
         displayCard(previouslySelectedCardComponent,true)
 
     }
