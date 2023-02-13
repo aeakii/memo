@@ -32,6 +32,8 @@
             android:autoSizeTextType="uniform"
             android:background="@android:drawable/radiobutton_on_background"
             android:onClick="selectCard"
+            android:shadowColor="#2196F3"
+            android:shadowRadius="10"
             android:textAlignment="center" />
 
         <TextView
@@ -42,6 +44,8 @@
             android:autoSizeTextType="uniform"
             android:background="@android:drawable/radiobutton_on_background"
             android:onClick="selectCard"
+            android:shadowColor="#2196F3"
+            android:shadowRadius="10"
             android:textAlignment="center" />
 
 
@@ -53,6 +57,8 @@
             android:autoSizeTextType="uniform"
             android:background="@android:drawable/radiobutton_on_background"
             android:onClick="selectCard"
+            android:shadowColor="#2196F3"
+            android:shadowRadius="10"
             android:textAlignment="center" />
 
 
@@ -71,6 +77,8 @@
             android:autoSizeTextType="uniform"
             android:background="@android:drawable/radiobutton_on_background"
             android:onClick="selectCard"
+            android:shadowColor="#2196F3"
+            android:shadowRadius="10"
             android:textAlignment="center" />
 
 
@@ -82,7 +90,10 @@
             android:autoSizeTextType="uniform"
             android:background="@android:drawable/radiobutton_on_background"
             android:onClick="selectCard"
-            android:textAlignment="center" />
+            android:shadowColor="#2196F3"
+            android:shadowRadius="10"
+            android:textAlignment="center"
+            app:drawableTopCompat="@drawable/border" />
 
 
         <TextView
@@ -93,6 +104,8 @@
             android:autoSizeTextType="uniform"
             android:background="@android:drawable/radiobutton_on_background"
             android:onClick="selectCard"
+            android:shadowColor="#2196F3"
+            android:shadowRadius="10"
             android:textAlignment="center" />
 
     </LinearLayout>
@@ -110,6 +123,8 @@
             android:autoSizeTextType="uniform"
             android:background="@android:drawable/radiobutton_on_background"
             android:onClick="selectCard"
+            android:shadowColor="#2196F3"
+            android:shadowRadius="10"
             android:textAlignment="center" />
 
 
@@ -121,6 +136,8 @@
             android:autoSizeTextType="uniform"
             android:background="@android:drawable/radiobutton_on_background"
             android:onClick="selectCard"
+            android:shadowColor="#2196F3"
+            android:shadowRadius="10"
             android:textAlignment="center" />
 
 
@@ -132,6 +149,8 @@
             android:autoSizeTextType="uniform"
             android:background="@android:drawable/radiobutton_on_background"
             android:onClick="selectCard"
+            android:shadowColor="#2196F3"
+            android:shadowRadius="10"
             android:textAlignment="center" />
 
     </LinearLayout>
@@ -149,6 +168,8 @@
             android:autoSizeTextType="uniform"
             android:background="@android:drawable/radiobutton_on_background"
             android:onClick="selectCard"
+            android:shadowColor="#2196F3"
+            android:shadowRadius="10"
             android:textAlignment="center" />
 
 
@@ -160,6 +181,8 @@
             android:autoSizeTextType="uniform"
             android:background="@android:drawable/radiobutton_on_background"
             android:onClick="selectCard"
+            android:shadowColor="#2196F3"
+            android:shadowRadius="10"
             android:textAlignment="center" />
 
         <TextView
@@ -170,6 +193,8 @@
             android:autoSizeTextType="uniform"
             android:background="@android:drawable/radiobutton_on_background"
             android:onClick="selectCard"
+            android:shadowColor="#2196F3"
+            android:shadowRadius="10"
             android:textAlignment="center" />
 
     </LinearLayout>

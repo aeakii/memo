@@ -78,6 +78,8 @@ class GameActivity : AppCompatActivity() {
                         pointsTxt.text = points.toString()
                         selectedCards.add(previouslySelectedCardIndex)
                         selectedCards.add(getCardIndex(view))
+                        view.setShadowLayer(0F,0F,0F,0xFFFFFF)
+                        previouslySelectedCardComponent.setShadowLayer(0F,0F,0F,0xFFFFFF)
                     } else {
                         displayCard(view,true)
                         displayCard(previouslySelectedCardComponent,true)
