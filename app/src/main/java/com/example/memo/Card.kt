@@ -11,7 +11,7 @@ class Card(a : Int,b : String,c : String ) {
 public val mechatronicsCards = arrayOf(
     Card(R.drawable.a1,"die","Blechschere"),
     Card(R.drawable.a2,"die","kombizange"),
-    Card(R.drawable.a3,"der","3"),
+    Card(R.drawable.a3,"der","Schlitzschraubendreher"),
     Card(R.drawable.a4,"der","Doppelringschlüssel"),
     Card(R.drawable.a5,"der","Druckprüfer"),
     Card(R.drawable.a6,"die","Batterie"),
