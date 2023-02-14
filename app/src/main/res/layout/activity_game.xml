@@ -19,6 +19,13 @@
         android:layout_height="wrap_content"
         android:text="TextView" />
 
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="goBack"
+        android:text="wróc" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"

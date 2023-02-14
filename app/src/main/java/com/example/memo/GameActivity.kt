@@ -148,5 +148,8 @@ class GameActivity : AppCompatActivity() {
         displayCard(previouslySelectedCardComponent,true)
 
     }
+     fun goBack(view: View){
+        super.onBackPressed();
+    }
 
 }

@@ -22,7 +22,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_launcher_foreground" />
+                app:srcCompat="@drawable/logo" />
 
             <ImageButton
                 android:id="@+id/imageButton"
@@ -31,6 +31,14 @@
                 android:layout_weight="1"
                 android:contentDescription="@string/mute"
                 app:srcCompat="@android:drawable/ic_lock_silent_mode_off" />
+
+            <Button
+                android:id="@+id/buttonGoBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="goBack"
+                android:text="wróć" />
 
         </LinearLayout>
 
