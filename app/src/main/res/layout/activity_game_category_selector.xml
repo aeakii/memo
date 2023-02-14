@@ -74,13 +74,6 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/buttonCategoryIt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="startGame"
-                android:text="@string/it" />
-
-            <Button
                 android:id="@+id/buttonCategoryMechatronics"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

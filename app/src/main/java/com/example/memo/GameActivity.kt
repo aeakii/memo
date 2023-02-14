@@ -34,6 +34,8 @@ class GameActivity : AppCompatActivity() {
         val notUsedCards = when (intent.getIntExtra("category",0)){
             2 ->       mechatronicsCards.toMutableList()
             1 ->       electricityCards.toMutableList()
+            3 ->       mechanicCards.toMutableList()
+
             else ->  mechatronicsCards.toMutableList()
         }
         for (i in 0..notSetCardIndexes.size - 1) {

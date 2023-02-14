@@ -17,6 +17,7 @@ class GameCategorySelectorActivity : AppCompatActivity() {
         var category = when (view.id) {
             R.id.buttonCategoryElectricity -> 1
             R.id.buttonCategoryMechatronics -> 2
+            R.id.buttonCategoryMechanics -> 3
             else -> 0
         }
         game.putExtra("category",category)

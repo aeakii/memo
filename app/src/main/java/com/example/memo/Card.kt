@@ -43,6 +43,24 @@ public val electricityCards = arrayOf(
     Card(R.drawable.electricity15,"die","Halogenreflektor"),
     Card(R.drawable.electricity16,"die","Kabeltrommel"),
     Card(R.drawable.electricity1,"die","Stecker"),
-
-
     )
+
+public val mechanicCards = arrayOf(
+    Card(R.drawable.mech1,"der","Maulringschlüssel"),
+    //Card(R.drawable.mech2,"die","Steckdosenleiste"),  ///?
+    Card(R.drawable.mech3,"der","Radmutternschlüssel"),
+    Card(R.drawable.mech4,"der","Bremsscheibe"),
+    Card(R.drawable.mech5,"der","Zahnriemen"),
+    Card(R.drawable.mech6,"der  ","Schraubendreher"),
+    Card(R.drawable.mech7,"die","Zündkerze"),
+    Card(R.drawable.mech8,"der","Kühler"),
+    Card(R.drawable.mech9,"der","Rückspiegel"),
+    Card(R.drawable.mech10,"das","Federbein"),
+    Card(R.drawable.mech11,"das","Starterkabel"),
+    Card(R.drawable.mech12,"der","Scherenwagenheber"),
+    Card(R.drawable.mech13,"die","Luftpumpe"),
+    Card(R.drawable.mech14,"der","Kreuzschlüssel"),
+    Card(R.drawable.mech15,"der","Auspuff"),
+    Card(R.drawable.mech16,"dir","Klemme"),
+
+)
