@@ -1,12 +1,9 @@
 package com.example.memo
 
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import kotlin.random.Random
 
@@ -34,7 +31,11 @@ class GameActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
         var notSetCardIndexes = mutableListOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
-        val notUsedCards = mechatronicsCards.toMutableList()
+        val notUsedCards = when (intent.getIntExtra("category",0)){
+            2 ->       mechatronicsCards.toMutableList()
+            1 ->       electricityCards.toMutableList()
+            else ->  mechatronicsCards.toMutableList()
+        }
         for (i in 0..notSetCardIndexes.size - 1) {
 
             if (!notSetCardIndexes.contains(i)) {

@@ -14,6 +14,12 @@ class GameCategorySelectorActivity : AppCompatActivity() {
     fun startGame(view:View){
         val game = Intent(this, GameActivity::class.java)
         game.putExtra("twoPlayers",intent.getBooleanExtra("twoPlayers",false))
+        var category = when (view.id) {
+            R.id.buttonCategoryElectricity -> 1
+            R.id.buttonCategoryMechatronics -> 2
+            else -> 0
+        }
+        game.putExtra("category",category)
         startActivity(game)
     }
     fun goBack(view: View){
