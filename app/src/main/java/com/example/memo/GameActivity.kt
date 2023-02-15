@@ -22,14 +22,15 @@ class GameActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_game)
         if(intent.getBooleanExtra("twoPlayers",false)) {
-            val txtPlayer2 = findViewById<View>(R.id.textViewPointsPlayerBlue)
-            //txtPlayer2.visibility = View.GONE
+            val txtPlayer2: TextView = findViewById(R.id.textViewPointsPlayerBlue)
+           txtPlayer2.visibility = View.VISIBLE
         }
 
         for (i in 0..indexOfTheSecondCard.size - 1) indexOfTheSecondCard[i] = -2
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_game)
+
         var notSetCardIndexes = mutableListOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
         val notUsedCards = when (intent.getIntExtra("category",0)){
             2 ->       mechatronicsCards.toMutableList()
