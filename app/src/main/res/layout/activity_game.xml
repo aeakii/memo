@@ -11,6 +11,7 @@
         android:id="@+id/textViewPointsPlayerRed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#673AB7"
         android:text="@string/points" />
 
     <TextView
