@@ -38,55 +38,7 @@ class GameActivity : AppCompatActivity() {
             txtPlayer2.visibility = View.VISIBLE
         }
 
-        for (i in 0..indexOfTheSecondCard.size - 1) indexOfTheSecondCard[i] = -2
-
-        var notSetCardIndexes = mutableListOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
-
-        val gameLayout : LinearLayout = findViewById(R.id.gameLayout)
-        val notUsedCards =
-            when (intent.getIntExtra("category", 0)) {
-            2 -> {
-                gameLayout.background=resources.getDrawable(R.drawable.mechatronics)
-                mechatronicsCards.toMutableList()
-            }
-            1 -> {
-                gameLayout.background=resources.getDrawable(R.drawable.electrics)
-                electricityCards.toMutableList()
-            }
-            3 -> {
-                gameLayout.background=resources.getDrawable(R.drawable.mechanics)
-                 mechanicCards.toMutableList()}
-
-            else -> mechatronicsCards.toMutableList()
-        }
-
-
-        for (i in 0..notSetCardIndexes.size - 1) {
-
-            if (!notSetCardIndexes.contains(i)) {
-                continue
-            }
-
-            notSetCardIndexes.remove(i)
-            if (!notSetCardIndexes.isEmpty()) {
-                var randomElementFromNotSetCardIndexes = notSetCardIndexes[
-                        if (notSetCardIndexes.size == 1) 0
-                        else Random.nextInt(notSetCardIndexes.size - 1)]
-                notSetCardIndexes.remove(randomElementFromNotSetCardIndexes)
-
-                indexOfTheSecondCard[i] = randomElementFromNotSetCardIndexes
-                indexOfTheSecondCard[randomElementFromNotSetCardIndexes] = i
-
-                val randomElementFromNotUsedCards = notUsedCards[
-                        if (notUsedCards.size == 1) 0
-                        else Random.nextInt(notUsedCards.size - 1)
-                ]
-                notUsedCards.remove(randomElementFromNotUsedCards)
-                dataOfCards[i] = randomElementFromNotUsedCards
-                dataOfCards[randomElementFromNotSetCardIndexes] = randomElementFromNotUsedCards
-
-            }
-        }
+        restartGame()
 
 
     }
@@ -214,5 +166,61 @@ class GameActivity : AppCompatActivity() {
             ++pointsPlayer2
         }.toString()
 
+    }
+
+    fun restartGame(view: View){
+         intent = getIntent()
+        startActivity(intent)
+    }
+    fun restartGame(){
+        for (i in 0..indexOfTheSecondCard.size - 1) indexOfTheSecondCard[i] = -2
+
+        var notSetCardIndexes = mutableListOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
+
+        val gameLayout : LinearLayout = findViewById(R.id.gameLayout)
+        val notUsedCards =
+            when (intent.getIntExtra("category", 0)) {
+                2 -> {
+                    gameLayout.background=resources.getDrawable(R.drawable.mechatronics)
+                    mechatronicsCards.toMutableList()
+                }
+                1 -> {
+                    gameLayout.background=resources.getDrawable(R.drawable.electrics)
+                    electricityCards.toMutableList()
+                }
+                3 -> {
+                    gameLayout.background=resources.getDrawable(R.drawable.mechanics)
+                    mechanicCards.toMutableList()}
+
+                else -> mechatronicsCards.toMutableList()
+            }
+
+
+        for (i in 0..notSetCardIndexes.size - 1) {
+
+            if (!notSetCardIndexes.contains(i)) {
+                continue
+            }
+
+            notSetCardIndexes.remove(i)
+            if (!notSetCardIndexes.isEmpty()) {
+                var randomElementFromNotSetCardIndexes = notSetCardIndexes[
+                        if (notSetCardIndexes.size == 1) 0
+                        else Random.nextInt(notSetCardIndexes.size - 1)]
+                notSetCardIndexes.remove(randomElementFromNotSetCardIndexes)
+
+                indexOfTheSecondCard[i] = randomElementFromNotSetCardIndexes
+                indexOfTheSecondCard[randomElementFromNotSetCardIndexes] = i
+
+                val randomElementFromNotUsedCards = notUsedCards[
+                        if (notUsedCards.size == 1) 0
+                        else Random.nextInt(notUsedCards.size - 1)
+                ]
+                notUsedCards.remove(randomElementFromNotUsedCards)
+                dataOfCards[i] = randomElementFromNotUsedCards
+                dataOfCards[randomElementFromNotSetCardIndexes] = randomElementFromNotUsedCards
+
+            }
+        }
     }
 }
