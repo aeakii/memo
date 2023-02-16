@@ -45,6 +45,13 @@
             android:layout_height="wrap_content"
             android:onClick="play"
             android:text="@string/play_2players" />
+
+        <Button
+            android:id="@+id/buttonAboutGame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="aboutGame"
+            android:text="o grze" />
     </LinearLayout>
 
 </LinearLayout>

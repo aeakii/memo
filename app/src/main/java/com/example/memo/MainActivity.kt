@@ -19,4 +19,9 @@ class MainActivity : AppCompatActivity() {
             )
         startActivity(activityCategoriesIntent)
     }
+
+    fun aboutGame(view: View){
+        var activityAbout = Intent(this,AboutActivity::class.java)
+        startActivity(activityAbout)
+    }
 }
