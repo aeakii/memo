@@ -44,7 +44,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
@@ -59,42 +59,35 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/buttonSelectorOneCategory"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#6AFF00"
-                android:text="@string/one" />
-
-            <Button
-                android:id="@+id/buttonSelectorFewCategories"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/many" />
-        </LinearLayout>
+            android:orientation="horizontal" />
 
         <Button
             android:id="@+id/buttonCategoryMechatronics"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="startGame"
+            android:onClick="selectCards"
             android:text="@string/mechatronics" />
 
         <Button
             android:id="@+id/buttonCategoryElectricity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="startGame"
+            android:onClick="selectCards"
             android:text="@string/electricity" />
 
         <Button
             android:id="@+id/buttonCategoryMechanics"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="startGame"
+            android:onClick="selectCards"
             android:text="@string/mechanics" />
+
+        <Button
+            android:id="@+id/buttonStart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="startGame"
+            android:text="Start" />
     </LinearLayout>
 
 </LinearLayout>

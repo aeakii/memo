@@ -176,24 +176,21 @@ class GameActivity : AppCompatActivity() {
         for (i in 0..indexOfTheSecondCard.size - 1) indexOfTheSecondCard[i] = -2
 
         var notSetCardIndexes = mutableListOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
-
+        val notUsedCards = mutableListOf<Card>()
         val gameLayout : LinearLayout = findViewById(R.id.gameLayout)
-        val notUsedCards =
-            when (intent.getIntExtra("category", 0)) {
-                2 -> {
-                    gameLayout.background=resources.getDrawable(R.drawable.mechatronics)
-                    mechatronicsCards.toMutableList()
+           if (intent.getBooleanExtra("electricity", false)){
+                    gameLayout.background=resources.getDrawable(R.drawable.electricity1)
+                    notUsedCards+= electricityCards.toMutableList()
                 }
-                1 -> {
-                    gameLayout.background=resources.getDrawable(R.drawable.electrics)
-                    electricityCards.toMutableList()
-                }
-                3 -> {
-                    gameLayout.background=resources.getDrawable(R.drawable.mechanics)
-                    mechanicCards.toMutableList()}
+        if (intent.getBooleanExtra("mechatronics", false)){
+            gameLayout.background=resources.getDrawable(R.drawable.mechatronics)
+            notUsedCards+= mechatronicsCards.toMutableList()
+        }
+        if (intent.getBooleanExtra("mechanics", false)){
+            gameLayout.background=resources.getDrawable(R.drawable.mechanics)
+            notUsedCards+= mechanicCards.toMutableList()
+        }
 
-                else -> mechatronicsCards.toMutableList()
-            }
 
 
         for (i in 0..notSetCardIndexes.size - 1) {
