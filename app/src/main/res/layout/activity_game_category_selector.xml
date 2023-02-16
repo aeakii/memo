@@ -1,101 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
 
-        xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mechanics"
+    android:orientation="vertical"
+    android:screenOrientation="portrait"
+    tools:context=".GameCategorySelectorActivity"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="1dp">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".GameCategorySelectorActivity"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp"
-     android:screenOrientation="portrait"
-    >
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            app:srcCompat="@drawable/logo" />
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/logo" />
-
-            <Button
-                android:id="@+id/buttonGoBack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="goBack"
-                android:text="wróć" />
-
-        </LinearLayout>
-
-
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="200dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/buttonGoBack"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="@string/manycat" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/buttonSelectorOneCategory"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="#6AFF00"
-                    android:text="@string/one" />
-
-                <Button
-                    android:id="@+id/buttonSelectorFewCategories"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/many" />
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/buttonCategoryMechatronics"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="startGame"
-                android:text="@string/mechatronics" />
-
-            <Button
-                android:id="@+id/buttonCategoryElectricity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="startGame"
-                android:text="@string/electricity" />
-
-            <Button
-                android:id="@+id/buttonCategoryMechanics"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="startGame"
-                android:text="@string/mechanics" />
-        </LinearLayout>
+            android:layout_weight="1"
+            android:onClick="goBack"
+            android:text="wróć" />
 
     </LinearLayout>
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/manycat" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonSelectorOneCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#6AFF00"
+                android:text="@string/one" />
+
+            <Button
+                android:id="@+id/buttonSelectorFewCategories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/many" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/buttonCategoryMechatronics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="startGame"
+            android:text="@string/mechatronics" />
+
+        <Button
+            android:id="@+id/buttonCategoryElectricity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="startGame"
+            android:text="@string/electricity" />
+
+        <Button
+            android:id="@+id/buttonCategoryMechanics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="startGame"
+            android:text="@string/mechanics" />
+    </LinearLayout>
+
+</LinearLayout>
 

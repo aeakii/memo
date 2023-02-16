@@ -2,11 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".GameActivity"
-    android:screenOrientation="portrait">
+    android:screenOrientation="portrait"
+    tools:context=".GameActivity">
 
     <TextView
         android:id="@+id/textViewPointsPlayerRed"
@@ -102,8 +103,7 @@
             android:onClick="selectCard"
             android:shadowColor="#2196F3"
             android:shadowRadius="10"
-            android:textAlignment="center"
-             />
+            android:textAlignment="center" />
 
 
         <TextView
