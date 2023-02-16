@@ -7,7 +7,6 @@ import android.os.CountDownTimer
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.core.content.ContextCompat
 import kotlin.random.Random
 
 class GameActivity : AppCompatActivity() {
@@ -19,10 +18,12 @@ class GameActivity : AppCompatActivity() {
     private var pointsPlayer2: Int = 0
 
     private var selectedCards: MutableList<Int> = mutableListOf()
-    private lateinit var previouslySelectedCardComponent: TextView
-    private lateinit var secondSelectedCardComponent: TextView
-    private val coveredCardImage =
-        com.google.android.material.R.drawable.abc_btn_radio_to_on_mtrl_000
+    private  var selectedCardComponent1: TextView? = null
+    private  var selectedCardComponent2: TextView? = null
+    private lateinit var selectedCardComponent1Timer: TextView
+    private lateinit var selectedCardComponent2Timer: TextView
+
+    private val coveredCardImage = R.drawable.logo
     private var timerNotStarted: Boolean = true
     private var player2turn: Boolean = false
     private var players2mode: Boolean = false
@@ -94,20 +95,26 @@ class GameActivity : AppCompatActivity() {
 
         if (view is TextView) {
             if (!timerNotStarted) coverCurrentCards()
-            secondSelectedCardComponent = view
+            selectedCardComponent2 = view
             displayCard(view, false)
             if (previouslySelectedCardIndex == -1) {
                 previouslySelectedCardIndex = getCardIndex(view)
-                previouslySelectedCardComponent = view
+                selectedCardComponent1 = view
             } else {
+                //if (!timerNotStarted) coverCurrentCards()
                 if (!selectedCards.contains(getCardIndex(view))) {
                     if ((indexOfTheSecondCard[previouslySelectedCardIndex] == getCardIndex(view))) {
                         addPoints()
                         selectedCards.add(previouslySelectedCardIndex)
                         selectedCards.add(getCardIndex(view))
                         view.setShadowLayer(0F, 0F, 0F, 0xFFFFFF)
-                        previouslySelectedCardComponent.setShadowLayer(0F, 0F, 0F, 0xFFFFFF)
+                        selectedCardComponent1!!.setShadowLayer(0F, 0F, 0F, 0xFFFFFF)
                     } else {
+
+                        selectedCardComponent1Timer= selectedCardComponent1!!
+                        selectedCardComponent2Timer=selectedCardComponent2!!
+                        selectedCardComponent1=null
+                        selectedCardComponent2=null
                         switchPlayerTurn()
                         timerNotStarted = false
                         timer.start()
@@ -168,10 +175,10 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun coverCurrentCards() {
-        if (!selectedCards.contains(getCardIndex(secondSelectedCardComponent)))
-            displayCard(secondSelectedCardComponent, true)
-        if (!selectedCards.contains(getCardIndex(previouslySelectedCardComponent)))
-            displayCard(previouslySelectedCardComponent, true)
+        if (selectedCardComponent1Timer != selectedCardComponent1 && selectedCardComponent2 != selectedCardComponent1Timer)
+            displayCard(selectedCardComponent1Timer, true)
+        if (selectedCardComponent2Timer != selectedCardComponent1 && selectedCardComponent2 != selectedCardComponent2Timer)
+            displayCard(selectedCardComponent2Timer, true)
 
     }
 
