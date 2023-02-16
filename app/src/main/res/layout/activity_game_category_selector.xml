@@ -10,7 +10,9 @@
         android:orientation="vertical"
         tools:context=".GameCategorySelectorActivity"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        tools:layout_editor_absoluteY="1dp"
+     android:screenOrientation="portrait"
+    >
 
         <LinearLayout
             android:layout_width="match_parent"
