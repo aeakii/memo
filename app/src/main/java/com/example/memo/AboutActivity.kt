@@ -1,8 +1,10 @@
 package com.example.memo
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 
 class AboutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,5 +15,11 @@ class AboutActivity : AppCompatActivity() {
 
     fun goBack(view: View) {
         super.onBackPressed();
+    }
+    fun goWebsite(view: View){
+
+        val i = Intent(Intent.ACTION_VIEW)
+        i.setData(Uri.parse("https://zschie.pl"))
+        startActivity(i)
     }
 }
