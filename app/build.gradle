@@ -8,7 +8,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.memo"
+        applicationId "pl.zschie.memo"
         minSdk 22
         targetSdk 33
         versionCode 1

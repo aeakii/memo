@@ -4,9 +4,12 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.speech.tts.TextToSpeech
+import android.util.Log
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
+import java.util.Locale
 import kotlin.random.Random
 
 class GameActivity : AppCompatActivity() {
@@ -27,6 +30,8 @@ class GameActivity : AppCompatActivity() {
     private var timerNotStarted: Boolean = true
     private var player2turn: Boolean = false
     private var players2mode: Boolean = false
+    lateinit private var tts: TextToSpeech
+    var ttsenabled :Boolean = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,6 +51,11 @@ class GameActivity : AppCompatActivity() {
     fun selectCard(view: View) {
 
         if (view is TextView) {
+
+             if(ttsenabled) tts.speak("j fj ieee".toString(),TextToSpeech.QUEUE_FLUSH,null);
+
+
+
             if (!timerNotStarted) coverCurrentCards()
             selectedCardComponent2 = view
             displayCard(view, false)
@@ -145,10 +155,11 @@ class GameActivity : AppCompatActivity() {
         if (player2turn) {
             txtPlayer1.setBackgroundColor(
                 Color.RED
+
             )
-            txtPlayer2.setBackgroundColor(Color.WHITE)
+            txtPlayer2.setBackgroundResource(0)
         } else {
-            txtPlayer1.setBackgroundColor(Color.WHITE)
+            txtPlayer1.setBackgroundResource(0)
             txtPlayer2.setBackgroundColor(Color.BLUE)
         }
         player2turn = !player2turn
@@ -160,7 +171,7 @@ class GameActivity : AppCompatActivity() {
             if (player2turn) R.id.textViewPointsPlayerBlue
             else R.id.textViewPointsPlayerRed
         )
-        pointsTxt.text = "points: " + if (player2turn) {
+        pointsTxt.text = "Punkty: " + if (player2turn) {
             ++pointsPlayer1
         } else {
             ++pointsPlayer2
@@ -169,8 +180,7 @@ class GameActivity : AppCompatActivity() {
     }
 
     fun restartGame(view: View){
-         intent = getIntent()
-        startActivity(intent)
+         super.recreate()
     }
     fun restartGame(){
         for (i in 0..indexOfTheSecondCard.size - 1) indexOfTheSecondCard[i] = -2
@@ -179,16 +189,13 @@ class GameActivity : AppCompatActivity() {
         val notUsedCards = mutableListOf<Card>()
         val gameLayout : LinearLayout = findViewById(R.id.gameLayout)
            if (intent.getBooleanExtra("electricity", false)){
-                    gameLayout.background=resources.getDrawable(R.drawable.electricity1)
-                    notUsedCards+= electricityCards.toMutableList()
+                    notUsedCards+= electricity_Cards.toMutableList()
                 }
         if (intent.getBooleanExtra("mechatronics", false)){
-            gameLayout.background=resources.getDrawable(R.drawable.mechatronics)
-            notUsedCards+= mechatronicsCards.toMutableList()
+            notUsedCards+= mechanics_anicCards.toMutableList()
         }
         if (intent.getBooleanExtra("mechanics", false)){
-            gameLayout.background=resources.getDrawable(R.drawable.mechanics)
-            notUsedCards+= mechanicCards.toMutableList()
+            notUsedCards+= mechanics_anicCards.toMutableList()
         }
 
 
@@ -220,4 +227,5 @@ class GameActivity : AppCompatActivity() {
             }
         }
     }
+
 }
