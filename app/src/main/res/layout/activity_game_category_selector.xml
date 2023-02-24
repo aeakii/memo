@@ -90,6 +90,7 @@
             android:id="@+id/buttonCategoryIT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="selectCards"
             android:text="informatyka" />
 
         <Button

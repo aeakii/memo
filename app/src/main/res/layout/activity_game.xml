@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/points"
-        android:textColor="#00FFB7"
+        android:textColor="#00B0FF"
         android:visibility="gone" />
 
     <Button

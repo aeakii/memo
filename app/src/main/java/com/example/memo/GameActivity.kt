@@ -191,11 +191,14 @@ class GameActivity : AppCompatActivity() {
            if (intent.getBooleanExtra("electricity", false)){
                     notUsedCards+= electricity_Cards.toMutableList()
                 }
-        if (intent.getBooleanExtra("mechatronics", false)){
-            notUsedCards+= mechanics_anicCards.toMutableList()
+            if (intent.getBooleanExtra("mechatronics", false)){
+                notUsedCards+= mechanics_anicCards.toMutableList()
         }
         if (intent.getBooleanExtra("mechanics", false)){
             notUsedCards+= mechanics_anicCards.toMutableList()
+        }
+        if (intent.getBooleanExtra("it", false)) {
+            notUsedCards += ITCards.toMutableList()
         }
 
 

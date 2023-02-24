@@ -64,3 +64,24 @@ public val mechanics_anicCards = arrayOf(
     Card(R.drawable.mechanics_0,"dir","Klemme"),
 
 )
+
+public val ITCards = arrayOf(
+    Card(R.drawable.it_0,"die","Maus"),
+    Card(R.drawable.it_1,"die","Webcam"),
+    Card(R.drawable.it_2,"der","Beamer"),
+    Card(R.drawable.it_4,"die","Festplatte"),
+    Card(R.drawable.it_5,"die","Kopfhörer"),
+    Card(R.drawable.it_6,"der","Tastatur"),
+    Card(R.drawable.it_7,"der","Bildschrim"),
+    Card(R.drawable.it_8,"der","Stecker"),
+    Card(R.drawable.it_9,"der","Schalter"),
+    Card(R.drawable.it_10,"der","Drucker"),
+    Card(R.drawable.it_11,"der","Router"),
+    Card(R.drawable.it_12,"der","Lautsprecher"),
+    Card(R.drawable.it_13,"der","Usb-Stick"),
+    Card(R.drawable.it_14,"der","Computergehäuse    "),
+
+
+
+
+    )

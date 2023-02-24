@@ -10,7 +10,7 @@
     <string name="one">jedna</string>
     <string name="many">Wiele</string>
     <string name="manycat">możesz wybrać jedną lub wiele kategori</string>
-    <string name="points">Punkty:</string>
+    <string name="points">Punkty: 0</string>
     <string name="back">wróć</string>
 
 </resources>

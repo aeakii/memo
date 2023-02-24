@@ -9,26 +9,40 @@ import android.widget.Button
 
 class GameCategorySelectorActivity : AppCompatActivity() {
     lateinit var game : Intent
-    private val selected : MutableList<Int> = mutableListOf()
+     private lateinit var selected : MutableList<Int>
+     private var started = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        game = Intent(this, GameActivity::class.java)
+
         setContentView(R.layout.activity_game_category_selector)
+        game = Intent(this, GameActivity::class.java)
+        selected = mutableListOf()
     }
+
     fun startGame(view:View){
         for (e in selected){
             when(e){
                 R.id.buttonCategoryMechanics -> game.putExtra("mechanics",true)
                 R.id.buttonCategoryElectricity -> game.putExtra("electricity",true)
                 R.id.buttonCategoryMechatronics -> game.putExtra("mechatronics",true)
+                R.id.buttonCategoryIT -> game.putExtra("it",true)
+
 
             }
         }
         game.putExtra("twoPlayers",intent.getBooleanExtra("twoPlayers", false))
+        started=false
         startActivity(game)
     }
 
     fun selectCards(view:View){
+        if(started==false){
+            game.putExtra("mechanics",false)
+            game.putExtra("electricity",false)
+            game.putExtra("mechatronics",false)
+            game.putExtra("it",false)
+            started=true
+        }
 
         if(selected.contains(view.id)){
             view.setBackgroundColor(resources.getColor(R.color.purple_200))

@@ -33,13 +33,6 @@
         android:textSize="34sp" />
 
     <Button
-        android:id="@+id/buttonWebsite"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="goWebsite"
-        android:text="zschie.pl" />
-
-    <Button
         android:id="@+id/buttonGoBack2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
