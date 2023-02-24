@@ -32,10 +32,27 @@
         android:text="aplikacja została wykonana w ramach szkolnych praktyk zawodowych"
         android:textSize="34sp" />
 
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Opiekun projektu:Marcin Kołacz"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Autor: Oliwier Gneba"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
     <Button
         android:id="@+id/buttonGoBack2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:onClick="goBack"
         android:text="@string/back" />
+
 </LinearLayout>
